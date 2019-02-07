@@ -1,4 +1,3 @@
-import com.sun.org.apache.xerces.internal.impl.xs.SchemaNamespaceSupport;
 
 import java.util.Scanner;
 public class AdventureGame {
@@ -6,10 +5,10 @@ public class AdventureGame {
     public static void main(String[] args){
     welcomeMessage();
     promptMessage();
-    exitMessage();
     }
     public static void welcomeMessage(){
         System.out.println("WELCOME TO VICTOR'S LITTLE ADVENTURE!");
+        System.out.println("Try to survive till the end. Quit anytime by entering "+"\"q\"");
         System.out.println("\n");
     }
     public static void promptMessage(){
@@ -20,6 +19,8 @@ public class AdventureGame {
             upstairs();
         } else if (decision.equalsIgnoreCase("kitchen")){
             kitchen();
+        } else if (decision.equalsIgnoreCase("q")){
+            exitMessage();
         } else {
             System.out.println("Wrong input! Please try again.");
             promptMessage();
@@ -41,6 +42,8 @@ public class AdventureGame {
                 System.out.println("You die from the curse the witches put on the cake.");
             } else if (decision.equalsIgnoreCase("no")){
                 System.out.println("You live because temptation doesn't affect you. You survived the cursed cake!");
+            }else if (decision.equalsIgnoreCase("q")){
+                exitMessage();
             } else {
                 System.out.println("Not an answer. Please try again.");
                 kitchen();
@@ -53,10 +56,14 @@ public class AdventureGame {
                 System.out.println("You become a millionaire and meet the love of your life.");
             } else if (decision.equals("go to the future")) {
                 System.out.println("You get killed by robots and no one remembers who you are.");
+            }else if (decision.equalsIgnoreCase("q")){
+                exitMessage();
             } else {
                 System.out.println("Not an answer. Please try again.");
                 kitchen();
             }
+        }else if (decision.equalsIgnoreCase("q")){
+            exitMessage();
         } else {
             System.out.println("Not an answer. Please try again.");
             kitchen();
@@ -71,6 +78,8 @@ public class AdventureGame {
             bathroom();
         } else if (decision.equalsIgnoreCase("bedroom")){
             bedroom();
+        }else if (decision.equalsIgnoreCase("q")){
+            exitMessage();
         } else {
             System.out.println("Not an answer. Please try again.");
             upstairs();
@@ -88,6 +97,8 @@ public class AdventureGame {
                 System.out.println("The dragon glares at you, then awakens and eats you alive. You are dead.");
             } else if (decision.equalsIgnoreCase("bow down")){
                 System.out.println("Your obedience saves you. THe dragon closes its' eyes. You survive.");
+            }else if (decision.equalsIgnoreCase("q")){
+                exitMessage();
             } else {
                 System.out.println("Not an answer. Please try again.");
                 bedroom();
@@ -102,10 +113,14 @@ public class AdventureGame {
             } else if(decision.equalsIgnoreCase("struggle out")){
                 System.out.println("The bandages wrap even tighter. The constriction causes you to hallucinate.");
                 System.out.println("You can't think nor breathe. You are dead.");
+            }else if (decision.equalsIgnoreCase("q")){
+                exitMessage();
             } else {
                 System.out.println("Not an answer. Please try again.");
                 bedroom();
             }
+        }else if (decision.equalsIgnoreCase("q")){
+            exitMessage();
         } else {
             System.out.println("Not an answer. Please try again.");
             bedroom();
@@ -131,6 +146,9 @@ public class AdventureGame {
                         System.out.println("He looks at you with anger and takes it by force.");
                         System.out.println("He drains the blood out of you. You are dead.");
                         break;
+                    case "q":
+                        exitMessage();
+                        break;
                     default:
                         System.out.println("Not an answer. Please try again.");
                         bathroom();
@@ -151,16 +169,22 @@ public class AdventureGame {
                         System.out.println("A gust of wind blows the door open and ushers you out.");
                         System.out.println("You survive.");
                         break;
+                    case "q":
+                        exitMessage();
+                        break;
                     default:
                         System.out.println("Not an answer.Please try again.");
                         bathroom();
                         break;
                 }
                 break;
-                default:
-                    System.out.println("Not an answer.Please try again.");
-                    bathroom();
-                    break;
+            case "q":
+                exitMessage();
+                break;
+            default:
+                System.out.println("Not an answer.Please try again.");
+                bathroom();
+                break;
         }
     }
     public static void input(){
