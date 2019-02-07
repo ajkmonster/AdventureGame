@@ -28,6 +28,7 @@ public class AdventureGame {
     }
     public static void exitMessage(){
         System.out.println("Thank you for playing!");
+        System.out.println("Come back soon! Hehe.");
     }
     public static void kitchen(){
         System.out.println("As you are entering you see a refrigerator that is enveloping the room in vanilla vapors."+"\n"
